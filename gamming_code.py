@@ -4,7 +4,7 @@ abc = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', '
 		'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ',
 		'ы', 'ь','э', 'ю', 'я']
 
-input_txt = 'Атака'
+input_txt = 'Атакуем застра на рассвете'
 input_txt = input_txt.lower()
 input_txt = input_txt.replace(' ','')
 x = len(input_txt)
@@ -28,13 +28,18 @@ for i in code:
 	y += 1
 
 for i in res_num:
-	i = abc[i]
-	res_word.append(i)
+	if i < 32:
+		i = abc[i]
+		res_word.append(i)
+	else:
+		x = i-32
+		z = abc[x]
+		res_word.append(z)
 
 res_word = ''.join(res_word)
 
 print(input_txt)
-print(input_code)
-print(code)
-print(res_num)
+# print(input_code)
+# print(code)
+# print(res_num)
 print(res_word)
